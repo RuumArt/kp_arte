@@ -1,0 +1,9 @@
+@import 'styles/mixins';
+
+.root {
+  min-height: 100vh;
+}
+
+.title {
+  margin-bottom: vw(40);
+}

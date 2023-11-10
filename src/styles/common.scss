@@ -1,0 +1,101 @@
+@import 'styles/mixins';
+
+:root {
+
+  --sc: 1440;
+
+  --fz: #{vw(14)};
+  --lh: #{vw(18)};
+
+  /* colors */
+
+  --color-white: #fff;
+  --color-black: #000;
+  --color-dark: #333331;
+  --color-yellow: #ffdb35;
+  --color-orange: #f53822;
+
+  /* transition */
+
+  --default-ease: cubic-bezier(.33,1,.68,1);
+  --default-time: .4s;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'GolosText', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--fz);
+  line-height: var(--lh);
+}
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+h3 {
+  font-weight: 800;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  font-weight: 400;
+}
+
+button {
+  border: none;
+}
+
+img {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input[type='text'],
+textarea {
+  font-family: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

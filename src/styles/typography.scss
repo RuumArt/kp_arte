@@ -1,0 +1,24 @@
+@mixin h2 {
+  font-size: 3.89vw;
+  line-height: 4.44vw;
+
+  @media screen and (min-width: 1560px) {
+    font-size: 3.49vw;
+    line-height: 4.14vw;
+  }
+
+  @include desktop {
+    font-size: 3.52vw;
+    line-height: 4.3vw;
+  }
+
+  @include tablet {
+    font-size: 4.69vw;
+    line-height: 5.73vw;
+  }
+
+  @include mobile {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}

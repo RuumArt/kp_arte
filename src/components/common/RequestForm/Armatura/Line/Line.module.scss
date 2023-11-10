@@ -1,0 +1,56 @@
+@use '~styles/mixins' as *;
+
+.root {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: vw(50);
+  }
+}
+
+.header {
+  position: relative;
+  padding-bottom: vw(20);
+  margin-bottom: vw(40);
+  border-bottom: 1px solid currentColor;
+}
+
+.remove {
+  position: absolute;
+  top: vw(16);
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+
+  svg {
+    display: block;
+    width: vw(25);
+    height: vw(25);
+    fill: var(--color-white)
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 vw(-15);
+
+  &:not(:last-child) {
+    margin-bottom: vw(25);
+  }
+}
+
+.itemCol {
+  padding: 0 vw(15);
+  width: 100%;
+  max-width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: vw(25);
+  }
+}

@@ -1,0 +1,73 @@
+@use '~styles/mixins' as *;
+
+.root {
+  position: relative;
+}
+
+.manager {
+  max-width: vw(500);
+}
+
+.products {
+  margin-top: vw(60);
+}
+
+.armatura {
+  margin-top: vw(60);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding-top: vw(40);
+  margin: vw(60) 0 0;
+  border-top: 1px solid var(--color-white);
+}
+
+.button {
+  &:not(:last-child) {
+    margin-right: vw(20);
+  }
+}
+
+.footer {
+  padding-top: vw(40);
+  margin: vw(40) 0;
+  border-top: 1px solid var(--color-white);
+}
+
+.footerInner {
+  display: flex;
+  margin: 0 vw(-15);
+}
+
+.footerItem {
+  flex: 1 1 0;
+  width: 100%;
+  padding: 0 vw(15);
+}
+
+.download {
+  display: inline-block;
+  min-width: vw(182);
+  padding: vw(14) vw(30);
+  border: 1px solid var(--color-orange);
+  border-radius: vw(40);
+  font-size: vw(14);
+  line-height: 1;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  transition: color 0.3s linear, background-color 0.3s linear;
+
+  @include hover() {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+}
+
+.check {
+  margin-left: vw(30);
+  margin-bottom: vw(15);
+}

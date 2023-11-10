@@ -1,0 +1,8 @@
+@import 'styles/mixins';
+
+.root {
+  position: relative;
+  max-width: vw(1024);
+  margin: 0 auto;
+  padding: 0 vw(40);
+}

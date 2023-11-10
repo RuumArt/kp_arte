@@ -1,0 +1,19 @@
+@use '~styles/mixins' as *;
+
+.root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: vw(20) 0;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--color-yellow);
+}

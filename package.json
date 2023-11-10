@@ -1,0 +1,38 @@
+{
+  "name": "artecalc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@david.kucsai/react-pdf-table": "^0.4.1",
+    "@react-pdf/renderer": "^3.0.1",
+    "axios": "^1.2.1",
+    "classnames": "^2.3.2",
+    "gsap": "^3.11.4",
+    "next": "13.0.6",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-pdf-table": "^1.0.0-alfa.3",
+    "sass": "^1.56.2",
+    "use-google-sheets": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "8.16.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^12.2.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "prettier": "2.5.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-scss": "^4.0.0"
+  }
+}

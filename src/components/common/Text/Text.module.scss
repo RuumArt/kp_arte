@@ -1,0 +1,114 @@
+@use '~styles/mixins' as *;
+
+.root {
+  position: relative;
+  font-size: var(--fz);
+  line-height: var(--lh);
+
+  p {
+    margin-bottom: vw(15);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.size {
+  &-h1 {
+    font-size: vw(80);
+    line-height: vw(88);
+  }
+
+  &-h2 {
+    font-size: vw(56);
+    line-height: vw(64);
+  }
+
+  &-h3 {
+    font-size: vw(32);
+    line-height: vw(40);
+  }
+
+  &-h4 {
+    font-size: vw(24);
+    line-height: vw(30);
+  }
+
+  &-medium {
+    font-size: vw(24);
+    line-height: vw(30);
+
+    @include tablet() {
+      font-size: vw(20);
+      line-height: vw(24);
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: vw(30);
+      }
+    }
+  }
+
+  &-p2 {
+    font-size: vw(20);
+    line-height: vw(24);
+
+    @include tablet() {
+      font-size: vw(16);
+      line-height: vw(20);
+    }
+
+    @include mobileS() {
+      font-size: vw(14);
+      line-height: vw(20);
+    }
+  }
+
+  &-p3 {
+    font-size: vw(16);
+    line-height: vw(24);
+
+    @include tablet() {
+      font-size: vw(14);
+      line-height: vw(20);
+    }
+  }
+}
+
+.weight {
+  &-normal {
+    font-weight: normal;
+  }
+
+  &-regular {
+    font-weight: 400;
+  }
+
+  &-medium {
+    font-weight: 500;
+  }
+
+  &-semi {
+    font-weight: 600;
+  }
+
+  &-bold {
+    font-weight: 700;
+  }
+
+  &-black {
+    font-weight: 800;
+  }
+}
+
+.transform {
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-capitalize {
+    text-transform: capitalize;
+  }
+}

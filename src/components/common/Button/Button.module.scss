@@ -1,0 +1,48 @@
+@import 'styles/mixins';
+
+.root {
+  position: relative;
+}
+
+.typeScheme {
+  &-normal {
+    padding: vw(14) vw(30);
+    border: 1px solid transparent;
+    border-radius: vw(40);
+    font-size: vw(14);
+    line-height: 1;
+  }
+
+  &-clear {
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: 0;
+  }
+}
+
+.colorScheme {
+  &-white {
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    border-color: var(--color-white);
+    transition: color 0.3s linear, background-color 0.3s linear;
+
+    @include hover() {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+    }
+  }
+
+  &-orange {
+    color: var(--color-white);
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+    transition: color 0.3s linear, background-color 0.3s linear;
+
+    @include hover() {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+    }
+  }
+}

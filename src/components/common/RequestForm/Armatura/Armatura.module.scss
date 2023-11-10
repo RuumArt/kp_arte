@@ -1,0 +1,26 @@
+@use '~styles/mixins' as *;
+
+.root {
+  position: relative;
+}
+
+.title {
+  margin-bottom: vw(30);
+}
+
+.body {
+  margin-bottom: vw(40);
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding-top: vw(40);
+  margin: vw(40) 0;
+  border-top: 1px solid var(--color-white);
+}
+
+.discount {
+  width: vw(500);
+}
