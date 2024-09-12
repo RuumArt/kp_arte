@@ -186,21 +186,21 @@ const s = StyleSheet.create({
     border: 0,
   },
   fHeader: {
-    paddingTop: '108px',
+    paddingTop: '180px',
     paddingLeft: '66px',
   },
   fLogo: {
     width: '134px',
     marginLeft: '-14px',
-    marginBottom: '18px',
+    marginBottom: '38px',
   },
   fTitle: {
-    width: '390px',
+    width: '440px',
     // height: '102px',
     marginBottom: '22px',
   },
   fText: {
-    fontSize: '24px',
+    fontSize: '21px',
   },
   fPercent: {
     fontSize: '28px',
@@ -224,11 +224,17 @@ const s = StyleSheet.create({
     marginTop: '120px',
     paddingLeft: '66px',
   },
-  fLine: {
+  fSnow: {
     position: 'absolute',
-    left: '5px',
+    right: 0,
+    top: '310px',
+    width: '250px',
+  },
+  fBg: {
+    position: 'absolute',
+    left: 0,
     top: 0,
-    width: '10px',
+    width: '100%',
   },
 });
 
@@ -302,27 +308,26 @@ const MyDocument = ({ data, tables }) => {
   return (
     <Document>
       {/* {data.calcSum && ( */}
-      <Page style={s.pageFriday}>
-        <View style={s.fHeader}>
-          <Image style={s.fLine} src="img/bf-line.png" />
-        </View>
-        <View style={s.fHeader}>
-          <Image style={s.fLogo} src="img/logo.png" />
-          <Image style={s.fTitle} src="img/Bf.png" />
-          <Text style={s.fText}>
-            <Text style={s.greenText}>Скидка </Text>
-            <Text style={s.fPercent}>25% </Text>на любой дизайн-радиатор
-          </Text>
-          <Text style={s.fText}>
-            и <Text style={s.yellowText}>бесплатная доставка</Text> по всей
-            России
-          </Text>
-        </View>
-        <View style={s.fBody}>
-          <Image style={s.actionTitle} src="img/action.png" />
-          <Text style={s.fActionDate}>11.11.23</Text>
-        </View>
-      </Page>
+      {/* <Page style={s.pageFriday}> */}
+      {/*  <Image style={s.fBg} src="img/bf-bg.png" /> */}
+      {/*  <Image style={s.fSnow} src="img/bf-snow.png" /> */}
+      {/*  <View style={s.fHeader}> */}
+      {/*    <Image style={s.fLogo} src="img/logo.png" /> */}
+      {/*    <Image style={s.fTitle} src="img/bf-title.png" /> */}
+      {/*    <Text style={s.fText}> */}
+      {/*      <Text style={s.greenText}>Скидка </Text> */}
+      {/*      <Text style={s.fPercent}>{tables?.info?.discount || ''}% </Text>на */}
+      {/*      любой дизайн-радиатор */}
+      {/*    </Text> */}
+      {/*    <Text style={s.fText}> */}
+      {/*      <Text style={s.yellowText}>с доставкой</Text> по всей России */}
+      {/*    </Text> */}
+      {/*  </View> */}
+      {/*  <View style={s.fBody}> */}
+      {/*    <Image style={s.actionTitle} src="img/action.png" /> */}
+      {/*    <Text style={s.fActionDate}>{tables?.info?.dateDiscount || ''}</Text> */}
+      {/*  </View> */}
+      {/* </Page> */}
       <Page style={s.pageSum}>
         <View style={s.sumHeader}>
           <Text style={s.sumTitle}>Предложение Arte</Text>
@@ -539,13 +544,14 @@ const MyDocument = ({ data, tables }) => {
             </Table>
           </View>
         )}
-        {data.manager && (
+        {data.manager && data.unit && (
           <View style={s.manager}>
             <View style={s.managerContact}>
               <Text style={s.managerText}>Персональный менеджер:</Text>
               <Text style={s.managerText}>{data.manager?.value}</Text>
               <Text style={s.managerText}>+7 800 101 06 76</Text>
-              <Text style={s.managerText}>+7 996 634 22 78 (WhatsApp)</Text>
+              <Text style={s.managerText}>+{data.unit.phone} (WhatsApp)</Text>
+              {/*<Text style={s.managerText}>+7 996 634 22 78 (WhatsApp)</Text>*/}
               <Text style={s.managerText}>@artehome_bot (Telegram)</Text>
               <Text style={s.managerText}>{data.manager?.email}</Text>
             </View>
@@ -629,8 +635,8 @@ const MyDocument = ({ data, tables }) => {
               {/* </View> */}
             </View>
             <View style={s.footer}>
-              <Text>В комплекте: радиатор, кронштейны, кран Маевского.</Text>
-              <Text>Изготовление: 21 рабочий день. Гарантия: 5 лет.</Text>
+              <Text>В комплекте: {tables?.info?.set || ''}</Text>
+              <Text>Изготовление: {tables?.info?.manufac || ''}</Text>
             </View>
           </Page>
         ))}

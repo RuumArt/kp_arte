@@ -95,6 +95,33 @@ const clearModelPhoto = data => {
   });
 };
 
+const clearInfo = data => {
+  const currentInfo = data[0];
+
+  if (!currentInfo) return {};
+
+  const keys = Object.keys(currentInfo);
+
+  return {
+    dateDiscount: currentInfo[keys[0]].trim(),
+    manufac: currentInfo[keys[1]].trim(),
+    set: currentInfo[keys[2]].trim(),
+    discount: currentInfo[keys[3]].trim(),
+  };
+};
+
+const clearUnits = data => {
+  return data.map((item, index) => {
+    const keys = Object.keys(item);
+
+    return {
+      id: `unit_${index}`,
+      value: item[keys[0]].trim(),
+      phone: item[keys[1]].trim(),
+    };
+  });
+}
+
 const getTable = (id, data) => {
   const table = data.filter(item => {
     return item.id === id;
@@ -112,6 +139,8 @@ export default data => {
     sectionTable,
     modelTable,
     schemeTable,
+    infoTable,
+    unitTable
   ] = [
     getTable('Таблица №1', data),
     getTable('Таблица №2', data),
@@ -121,6 +150,8 @@ export default data => {
     getTable('Сечение', data),
     getTable('Подключение', data),
     getTable('Схема радиаторов', data),
+    getTable('Информация', data),
+    getTable('Отделы', data)
   ];
 
   return {
@@ -132,5 +163,7 @@ export default data => {
     sectionPhoto: clearScheme(sectionTable),
     modelPhoto: clearModelPhoto(modelTable),
     schemePhoto: clearScheme(schemeTable),
+    info: clearInfo(infoTable),
+    units: clearUnits(unitTable),
   };
 };

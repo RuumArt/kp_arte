@@ -51,6 +51,16 @@ const RequestForm = ({ className, data }) => {
     <form className={cx(s.root, className)}>
       <div className={s.manager} id="manager">
         <Select
+          label="Отдел"
+          name="unit"
+          values={data.units}
+          value={request.unit}
+          onChange={handleFieldChange}
+          isError={errors.fields.unit}
+        />
+      </div>
+      <div className={s.manager} id="manager">
+        <Select
           label="Менеджер"
           name="manager"
           values={data.managers}

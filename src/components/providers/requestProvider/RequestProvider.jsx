@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import RequestContext from './RequestContext';
 
 const initialProduct = {
@@ -32,6 +32,7 @@ const initialArm = {
 
 const initialRequest = {
   manager: null,
+  unit: null,
   discount: null,
   discountArm: null,
   calcSum: false,

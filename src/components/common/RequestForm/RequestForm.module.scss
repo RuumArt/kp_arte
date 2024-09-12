@@ -6,6 +6,10 @@
 
 .manager {
   max-width: vw(500);
+
+  & + .manager {
+    margin-top: vw(24);
+  }
 }
 
 .products {
